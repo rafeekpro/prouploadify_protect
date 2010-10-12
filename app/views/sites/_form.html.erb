@@ -10,9 +10,8 @@
       </ul>
     </div>
   <% end %>
-
-  <%= image_tag(@site.attachment_url) if @site.attachment? %>
-  <%= link_to_if(@site.attachment?, "Descargar fichero", @site.attachment_url) %>
+IMAGEN: <%= image_tag(@site.attachment_url) if @site.attachment? %><br>
+URL: <%= link_to_if(@site.attachment?, "Descargar fichero", @site.attachment_url) %>
   <div id="fileQueue"></div>
   <%= f.label :attachment %>
   <%= f.file_field :attachment, :id => "fileInput2"  %><a href="javascript:$('#fileInput2').uploadifyUpload();">Upload Files</a> | <a href="javascript:$('#fileInput2').uploadifyClearQueue();">Clear Queue</a>

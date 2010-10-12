@@ -9,6 +9,7 @@ gem 'mysql2'
 gem 'devise'
 
 gem 'carrierwave'
+gem 'paperclip'
 #gem 'rmagick'
 gem 'mini_magick'
 

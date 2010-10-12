@@ -11,6 +11,8 @@
 
 <% @sites.each do |site| %>
   <tr>
+    <td><%= link_to 'IMG', site.attachment.current_path %></td>
+    <td><%= button_to "Download File", :action=>'attachment', :file=>site.id %></td>
     <td><%= link_to 'Ver', site %></td>
     <td><%= link_to 'Editar', edit_site_path(site) %></td>
     <td><%= link_to 'Borrar', site, :confirm => 'estas seguro?', :method => :delete %></td>

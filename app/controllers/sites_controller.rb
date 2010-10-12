@@ -14,8 +14,7 @@ class SitesController < ApplicationController
     end
   end
 
-  # GET /sites/1
-  # GET /sites/1.xml
+  # Ver el fichero subuido
   def show
     @site = Site.find(params[:id])
 
@@ -112,4 +111,14 @@ class SitesController < ApplicationController
       end
   end
   
+  
+  def attachment
+  	@site = Site.find(params[:file])
+  	
+  	#headers['Cache-Control'] = 'public; max-age=600' # cache image for 10 minutes
+  	send_file @site.attachment.url, 
+  	:disposition => 'inline', :type => "image/png"
+  end
+
+
 end
